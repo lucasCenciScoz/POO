@@ -14,7 +14,8 @@ public class Main {
                     "Opções: \n" +
                             "0. Sair \n" +
                             "1. Quadrado\n" +
-                            "2. Retângulo\n");
+                            "2. Retângulo\n" +
+                            "3. Circulo\n");
             opcao = sc.nextInt();
 
             FormaGeometrica forma;
@@ -59,25 +60,25 @@ public class Main {
                     do {
                         opcao2 = menuCalculo();
 
-
-
-                        switch (opcao2) {
-                            case 1: {
-                                System.out.println("Perimetro: " + forma.calculaPerimetro());
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Area: " + forma.calcularArea());
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Volume: " + forma.calculaVolume());
-                                break;
-                            }
-                        }
+                        retornoCalculos(opcao2, forma);
                     } while (opcao2 != 0);
 
                     break;
+                }
+                case 3: {
+                    System.out.println("Qual a cor do circulo:");
+                    String cor = sc.next();
+                    System.out.println("Qual o raio do circulo: ");
+                    double raio = sc.nextDouble();
+
+                    forma = new Circulo(cor, raio);
+                    int opcao2;
+                    do {
+                        opcao2 = menuCalculo();
+
+                        retornoCalculos(opcao2, forma);
+                    } while (opcao2 != 0);
+
                 }
             }
         }while (opcao != 0);

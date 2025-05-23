@@ -5,7 +5,15 @@ public class Quadrado extends FormaGeometrica{
 
     public Quadrado(String cor, double lado){
         super(cor);
-        this.lado = this.lado;
+        this.lado = lado;
+    }
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
     }
 
     @Override
